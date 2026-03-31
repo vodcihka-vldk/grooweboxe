@@ -1,0 +1,21 @@
+.gb-master {
+    width: 130px;
+    background-color: #f7ffba;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-left: 1px solid #ddd;
+    box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.master .knob {
+    width: 60px;
+    height: 60px;
+}
+
+.master .knob-label {
+    font-size: 1rem;
+    font-weight: 700;
+}

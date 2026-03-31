@@ -1,0 +1,306 @@
+.screen {
+    background-color: var(--screen-bg);
+    border: 4px solid var(--gb-black);
+    flex: 1;
+    height: 190px;
+    padding: 12px;
+    color: var(--accent);
+    font-family: 'Inter', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 4px;
+    box-shadow: inset 0 0 20px rgba(212, 255, 0, 0.05);
+}
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    gap: 6px;
+}
+
+.screen-header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.screen-channel {
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.screen-sample-path {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: #88aa00;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.screen-sample-name-wrap {
+    position: relative;
+    flex-grow: 1;
+    text-align: center;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.screen-sample-name-wrap > span {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.screen-param-display {
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    background: var(--screen-bg);
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.screen-param-display.show {
+    opacity: 1;
+}
+
+.screen-param-display span {
+    color: var(--accent);
+}
+
+#ui-screen-bpm {
+    font-size: 1.6rem;
+}
+
+.screen-body {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.screen-sample-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 65px;
+    flex-shrink: 0;
+}
+
+.screen-sample-idx {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--accent);
+}
+
+.screen-sample-ms {
+    font-size: 0.85rem;
+    color: #aadd00;
+    line-height: 1.1;
+}
+
+.screen-sample-ext {
+    font-size: 0.8rem;
+    color: #88aa00;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.screen-waveform {
+    flex-grow: 1;
+    height: 60px;
+    border: 2px solid var(--accent);
+    position: relative;
+    background: rgba(212, 255, 0, 0.05);
+}
+
+#waveform-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#waveform-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#screen-body-main,
+#screen-body-menu {
+    width: 100%;
+    height: 60px;
+}
+
+#screen-body-menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: 2px;
+    position: relative;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    transition: transform 0.15s ease-out;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #888;
+}
+
+#screen-body-folder {
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: 2px;
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+.folder-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+    transition: transform 0.15s ease-out;
+}
+
+.folder-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 5px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-item.selected {
+    color: var(--accent);
+    background: rgba(212, 255, 0, 0.1);
+}
+
+.folder-item.selected.is-file {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.folder-item .fi-icon {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.folder-item .fi-name {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-item .fi-ext {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    color: #aaa;
+    flex-shrink: 0;
+}
+
+.folder-item.selected .fi-ext {
+    color: var(--accent);
+}
+
+.menu-item.selected {
+    color: var(--accent);
+    background: rgba(212, 255, 0, 0.1);
+}
+
+.menu-item.editing {
+    color: #000;
+    background: var(--accent);
+}
+
+.menu-item.editing .menu-item-val {
+    color: #000;
+}
+
+.menu-item-val {
+    color: #fff;
+}
+
+.screen-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.screen-sequence-preview {
+    display: flex;
+    gap: 4px;
+}
+
+.seq-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.seq-dash {
+    width: 40px;
+    height: 6px;
+    border: 1px solid var(--accent);
+    flex-shrink: 0;
+}
+
+.seq-dash.active {
+    background-color: var(--accent);
+}
+
+.seq-dash.playing {
+    background-color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+.screen-bar {
+    font-weight: 800;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,91 @@
+.chan-btn {
+    width: 46px;
+    height: 46px;
+    background-color: var(--gb-black);
+    color: #777;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-btn);
+    border-radius: 6px;
+    border: 1px solid #111;
+    position: relative;
+    transition: background-color 0.05s, color 0.05s, box-shadow 0.05s;
+}
+
+.chan-btn.selected {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+.chan-btn.triggered {
+    color: #fff;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 12px var(--accent), inset 0 0 8px rgba(212, 255, 0, 0.15);
+}
+
+.chan-btn.selected.triggered {
+    color: #000;
+    background-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent), inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Pattern mode */
+.chan-btn.ptrn-mode {
+    color: #aaa;
+    border: 1px solid #555;
+}
+
+.chan-btn.ptrn-mode.ptrn-active {
+    color: var(--accent);
+    background-color: #1a1a00;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 10px rgba(212, 255, 0, 0.4);
+}
+
+.chan-btn.ptrn-mode.ptrn-selected {
+    color: #000;
+    background-color: var(--accent);
+    box-shadow: 0 0 14px var(--accent);
+}
+
+/* Pattern dot indicator */
+.chan-btn .ptrn-dot {
+    display: none;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #666;
+}
+
+.chan-btn.ptrn-mode .ptrn-dot {
+    display: block;
+}
+
+.chan-btn.ptrn-mode.ptrn-active .ptrn-dot {
+    background: var(--accent);
+}
+
+/* Section header ptrn label */
+#ptrn-mode-label {
+    display: none;
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    animation: blink-label 1s step-start infinite;
+}
+
+@keyframes blink-label {
+    50% { opacity: 0.3; }
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+}

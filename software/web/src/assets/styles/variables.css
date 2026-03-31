@@ -1,0 +1,14 @@
+:root {
+    --bg-dark: #121212;
+    --gb-bg: #e6e6db;
+    --gb-black: #2a2a2a;
+    --accent: #d4ff00;
+    --screen-bg: #0a0a00;
+    --text-dark: #333;
+    --text-white: #f5f5f5;
+
+    /* Neumorphic shadow sets */
+    --shadow-knob: 4px 4px 8px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(255, 255, 255, 0.1);
+    --shadow-btn: 3px 3px 6px rgba(0, 0, 0, 0.4), -1px -1px 3px rgba(255, 255, 255, 0.3);
+    --shadow-inset: inset 2px 2px 5px rgba(0, 0, 0, 0.6), inset -1px -1px 3px rgba(255, 255, 255, 0.1);
+}

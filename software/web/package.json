@@ -2,41 +2,19 @@
   "name": "grooveboxe-web",
   "version": "1.0.0",
   "description": "Web interface for GrooveBoxe hardware groovebox sampler",
-  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext .js,.vue",
-    "format": "prettier --write src"
+    "preview": "vite preview"
   },
-  "keywords": [
-    "groovebox",
-    "music",
-    "sequencer",
-    "web-audio",
-    "midi"
-  ],
+  "keywords": ["groovebox", "music", "sequencer", "web-audio"],
   "author": "GrooveBoxe Team",
   "license": "MIT",
   "devDependencies": {
     "vite": "^4.0.0",
-    "eslint": "^8.0.0",
-    "prettier": "^2.8.0",
     "@vitejs/plugin-vue": "^4.0.0"
   },
   "dependencies": {
-    "vue": "^3.3.0",
-    "vue-router": "^4.0.0",
-    "vuex": "^4.0.0",
-    "tone": "^14.8.47",
-    "midi-file": "^1.2.4",
-    "file-saver": "^2.0.5",
-    "lodash": "^4.17.21"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 11"
-  ]
+    "vue": "^3.3.0"
+  }
 }

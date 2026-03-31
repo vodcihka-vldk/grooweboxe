@@ -1,0 +1,41 @@
+.transport {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-round {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--gb-black);
+    color: #999;
+    box-shadow: var(--shadow-btn);
+    border: 3px solid #1c1c1c;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-round.highlight {
+    background-color: #333;
+}
+
+.btn-square {
+    width: 58px;
+    height: 46px;
+    background-color: var(--gb-black);
+    color: #999;
+    border-radius: 6px;
+    box-shadow: var(--shadow-btn);
+    border: 1px solid #111;
+    font-size: 0.82rem;
+}
+
+.btn-square.active {
+    color: var(--accent);
+    box-shadow: var(--shadow-inset);
+    background-color: #222;
+}
